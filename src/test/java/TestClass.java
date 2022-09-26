@@ -11,7 +11,7 @@ public void method1(){
 
 @Test
 public void method2(){
-    Assert.assertEquals("This is a string", "This is a String");
+    Assert.assertEquals("This is a String", "This is a String");
 }
 
 }
