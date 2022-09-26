@@ -1,0 +1,32 @@
+
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      #Checkout the code to the {machine} specified on runs-on
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: install java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '18.0.2+101'
+          distribution: 'temurin'
+
+      - name: run the build
+        run: ./gradlew build
+
+
