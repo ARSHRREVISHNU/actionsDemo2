@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [macOs-latest, windows-latest, ubuntu-latest]
 
     steps:
       #Checkout the code to the {machine} specified on runs-on
